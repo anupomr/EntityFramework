@@ -1,0 +1,59 @@
+﻿<Window x:Class="InvoiceWpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InvoiceWpfApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+
+    <TabControl x:Name="invoice">
+        <TabItem Header="All Invoices">
+            <DockPanel>
+                <Button Content="Refresh Invoice" DockPanel.Dock="Bottom" Width="80" Click="Button_Click"/>
+                <DataGrid x:Name="dgrdInvoice"/>
+            </DockPanel>
+        </TabItem>
+        <TabItem Header="Item">
+            <DockPanel>
+                <Button Content="Refresh" DockPanel.Dock="Bottom" Width="56" Click="Button_Click_1"/>
+                <DataGrid x:Name="dgrdItem"/>
+            </DockPanel>
+        </TabItem>
+        <TabItem Header="Add Item">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--row 0-->
+                <TextBlock Grid.ColumnSpan="2" Text="Add a new Item" />
+                <!--row 1-->
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Name" />
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtName"/>
+                <!--row 2-->
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Quantity" />
+                <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtQuantity"/>
+
+                <!--row 3-->
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Price" />
+                <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtPrice"/>
+                <!--row 4-->
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="Invoice Id" />
+                <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtInvoice"/>
+                <Button Grid.Row="5" Grid.ColumnSpan="2" Content="Add Item"  Width="180" Click="Button_Click_2"/>
+
+            </Grid>
+        </TabItem>
+    </TabControl>
+
+
+</Window>
